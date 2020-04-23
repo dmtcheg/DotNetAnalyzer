@@ -3,15 +3,15 @@ using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace dotnet
+namespace DotNet2020.Domain._1
 {
+    /// <summary>
+    /// анализатор для проверки инкапсуляции строк
+    /// </summary>
     class PropertyModifiersAnalyzer
     {
         public const string DiagnosticId = "PropertyDiagnosticId";
@@ -19,7 +19,7 @@ namespace dotnet
 
         private const string Title = "Property encapsulation problem";
         private const string MessageFormat = @"Property should have public get and protected set";
-        private const string Category = "Encapsulation";
+        private const string Category = "Entities and Aggregates";
         private const string Description = @"Property should have public get and protected set";
         public static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
 
@@ -41,7 +41,7 @@ namespace dotnet
                 propertyNode.Identifier.Text));
         }
 
-        private async Task<Solution> ChangeSolutoin(Document document, CodeFixContext context,
+        public static async Task<Solution> ChangeSolutoin(Document document, CodeFixContext context,
             CancellationToken cancellationToken)
         {
             var root = await context.Document

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dotnet
+namespace DotNet2020.Domain._1
 {
     interface IAnalyzer
     {
