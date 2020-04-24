@@ -23,14 +23,8 @@ namespace DotNet2020.Domain._1
             get
             {
                 return ImmutableArray.Create(
-                    LineLengthAnalyzer.DiagnosticId,
-                    FluentAnalyzer.DiagnosticId,
-                    PropertyModifiersAnalyzer.DiagnosticId,
-                    BooleanPropsNameAnalyzer.DiagnosticId,
-                    MethodBodyAnalyze.DiagnosticId,
-                    OneFileOneClass.DiagnosticId,
                     MethodParamsAnalyzer.DiagnosticId,
-                    LanguageAnalyzer.DiagnosticId);
+                    PropertyModifiersAnalyzer.DiagnosticId);
             }
         }
 
@@ -49,8 +43,16 @@ namespace DotNet2020.Domain._1
                     context.RegisterCodeFix(
                         CodeAction.Create(
                             title: PropertyModifiersAnalyzer.CodeFixTitle,
-                            createChangedSolution: c => PropertyModifiersAnalyzer.ChangeSolutoin(context.Document, context, c),
+                            createChangedSolution: c => PropertyModifiersAnalyzer.CodeFix(context.Document, context, c),
                             equivalenceKey: PropertyModifiersAnalyzer.CodeFixTitle),
+                        diagnostic);
+                    break;
+                case MethodParamsAnalyzer.DiagnosticId:
+                    context.RegisterCodeFix(
+                        CodeAction.Create(
+                            title: MethodParamsAnalyzer.CodeFixTitle,
+                            createChangedSolution: c => MethodParamsAnalyzer.CodeFix(context.Document, context, c),
+                            equivalenceKey: MethodParamsAnalyzer.CodeFixTitle),
                         diagnostic);
                     break;
             }
