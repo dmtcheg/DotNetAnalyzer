@@ -50,18 +50,14 @@ namespace DotNet2020.Domain._1
             var parameters = paramList.Parameters;
             var types = parameters.Select(p => p.Type);
             var typeSyntax = types.FirstOrDefault();
-            var classDeclaration = paramList.Parent.Parent.Parent;
+            var classDeclaration = paramList.Parent.Parent;
             var methodName = (paramList.Parent as MethodDeclarationSyntax).Identifier.ValueText;
 
             SyntaxNode newRoot = null;
-            if (types.All(t => t == typeSyntax))
-            {
-                newRoot = UseCollection(typeSyntax, paramList, root);
-            }
-            else
-            {
+            //if (types.All(t => t == typeSyntax))
+            //    newRoot = UseCollection(typeSyntax, paramList, root);
+            //else
                 newRoot = UseParameterObject(root, classDeclaration, paramList, parameters, methodName);
-            }
             return document.WithSyntaxRoot(newRoot).Project.Solution;
         }
 
@@ -87,8 +83,7 @@ namespace DotNet2020.Domain._1
                     }
                 ));
 
-            return root
-                .InsertNodesAfter(classDeclaration, new List<SyntaxNode> { paramObj })
+            return root.InsertNodesAfter(classDeclaration, new List<SyntaxNode> { paramObj })
                 .ReplaceNode(oldList, newList);
         }
 

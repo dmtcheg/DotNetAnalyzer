@@ -23,7 +23,7 @@ namespace DotNet2020.Domain._1
             get
             {
                 return ImmutableArray.Create(
-                    MethodParamsAnalyzer.DiagnosticId,
+                    //MethodParamsAnalyzer.DiagnosticId,
                     PropertyModifiersAnalyzer.DiagnosticId);
             }
         }
@@ -47,7 +47,7 @@ namespace DotNet2020.Domain._1
                             equivalenceKey: PropertyModifiersAnalyzer.CodeFixTitle),
                         diagnostic);
                     break;
-                case MethodParamsAnalyzer.DiagnosticId:
+                /*case MethodParamsAnalyzer.DiagnosticId:
                     context.RegisterCodeFix(
                         CodeAction.Create(
                             title: MethodParamsAnalyzer.CodeFixTitle,
@@ -55,6 +55,7 @@ namespace DotNet2020.Domain._1
                             equivalenceKey: MethodParamsAnalyzer.CodeFixTitle),
                         diagnostic);
                     break;
+                    */
             }
         }
     }
