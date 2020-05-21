@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace DotNet2020.Domain._1
 {
     /// <summary>
-    /// анализатор для проверки инкапсуляции строк
+    /// анализатор для проверки инкапсуляции свойств
     /// </summary>
     class PropertyModifiersAnalyzer
     {

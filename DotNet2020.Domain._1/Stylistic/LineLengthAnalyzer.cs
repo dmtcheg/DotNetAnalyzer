@@ -24,7 +24,6 @@ namespace DotNet2020.Domain._1
 
         public static void AnalyzeTree(SyntaxTreeAnalysisContext context)
         {
-            var root = context.Tree.GetRoot();
             var tree = context.Tree;
 
             var lines = tree.GetText().Lines;
