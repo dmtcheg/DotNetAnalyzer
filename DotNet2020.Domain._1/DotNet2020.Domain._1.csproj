@@ -8,11 +8,7 @@
 
   <PropertyGroup>
     <PackageId>EdaAnalyzer</PackageId>
-<<<<<<< HEAD
     <PackageVersion>1.0.3.1</PackageVersion>
-=======
-    <PackageVersion>1.0.3</PackageVersion>
->>>>>>> 4f4abac4485e8810375e38b1582e9dcdeeab27e1
     <Authors>Eda</Authors>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/DimaCheg/DotNetAnalyzer</RepositoryUrl>
