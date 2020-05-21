@@ -22,7 +22,6 @@ namespace DotNet2020.Domain._1
                     FluentAnalyzer.Rule,
                     PropertyModifiersAnalyzer.Rule,
                     MethodParamsAnalyzer.Rule,
-                    IQueryableAnalyzer.Rule,
                     Entity—onstructorAnalyzer.Rule,
                     BooleanPropsNameAnalyzer.Rule,
                     MethodBodyAnalyze.Rule,

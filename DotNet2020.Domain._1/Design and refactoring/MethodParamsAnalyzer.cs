@@ -18,8 +18,8 @@ namespace DotNet2020.Domain._1
     class MethodParamsAnalyzer
     {
         public const string DiagnosticId = "MethodParamsId";
-        public const string CodeFixTitle = "Use Parameter Object or collection instead of paramer list";
-        const string Title = "Replace parameter list";
+        public const string CodeFixTitle = "Replace parameter list";
+        const string Title = "Method has more than 1 parameter";
         const string MessageFormat = "Use Parameter Object or collection instead of paramer list";
         const string Category = "Design and refactoring";
         const string Description = "Use Parameter Object or collection instead of paramer list";
