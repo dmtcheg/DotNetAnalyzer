@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <PackageId>EdaAnalyzer</PackageId>
-    <PackageVersion>1.0.3.1</PackageVersion>
+    <PackageVersion>1.0.4</PackageVersion>
     <Authors>Eda</Authors>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/DimaCheg/DotNetAnalyzer</RepositoryUrl>
@@ -25,6 +25,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.6.2" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.10" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Update="NETStandard.Library" PrivateAssets="all" />
   </ItemGroup>
 
