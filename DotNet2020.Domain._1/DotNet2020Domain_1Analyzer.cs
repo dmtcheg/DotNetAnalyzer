@@ -40,6 +40,14 @@ namespace DotNet2020.Domain._1
 
         public override void Initialize(AnalysisContext context)
         {
+            var loops = new []
+            {
+                SyntaxKind.ForEachStatement,
+                SyntaxKind.ForStatement,
+                SyntaxKind.WhileStatement,
+                SyntaxKind.DoStatement
+            };
+            //context.RegisterSyntaxNodeAction(QueryInLoopAnalyzer.Analyze, loops);
             context.RegisterSyntaxNodeAction(Entity—onstructorAnalyzer.Analyze, SyntaxKind.ClassDeclaration);
             context.RegisterSyntaxTreeAction(LineLengthAnalyzer.AnalyzeTree);
             context.RegisterSyntaxNodeAction(FluentAnalyzer.Analyze, SyntaxKind.SimpleMemberAccessExpression);
